@@ -1,6 +1,11 @@
 server:
   port: 8080
 
+endpoints:
+  actuator: 
+    enabled: false
+    sensitive: false
+
 janusGraph:
   hosts: localhost
   type: remote
