@@ -23,6 +23,14 @@ curl http://localhost:8080/persons/8408
 
 ## Reference
 
+### Docker Composer Refactory
+
+```bash
+# genertate janus server image
+$ cd docker/janus-0.3
+docker build -t janusgraph/server:0.3.1 .
+```
+
 ### Spring Boot Actuator
 
 - [47. Endpoints](https://docs.spring.io/spring-boot/docs/1.5.x/reference/html/production-ready-endpoints.html)
