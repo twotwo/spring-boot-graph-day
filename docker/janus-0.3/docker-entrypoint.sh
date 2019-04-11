@@ -1,10 +1,4 @@
 #!/bin/bash
-#
-# NOTE: THIS FILE IS GENERATED VIA "update.sh"
-#
-# PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
 JANUS_PROPS="${JANUS_CONFIG_DIR}/janusgraph.properties"
 GREMLIN_YAML="${JANUS_CONFIG_DIR}/gremlin-server.yaml"
 
