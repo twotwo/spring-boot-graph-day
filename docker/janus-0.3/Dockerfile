@@ -15,8 +15,8 @@ ENV JANUS_HOME=/opt/janusgraph \
 
 RUN groupadd -r janusgraph --gid=999 && \
     useradd -r -g janusgraph --uid=999 janusgraph && \
-    # curl -fSL https://github.com/JanusGraph/janusgraph/releases/download/v${JANUS_VERSION}/janusgraph-${JANUS_VERSION}-hadoop2.zip -o janusgraph.zip && \
-    curl -fSL http://li3huo.com/janusgraph-0.3.1-hadoop2.zip -o janusgraph.zip && \
+    curl -fSL https://github.com/JanusGraph/janusgraph/releases/download/v${JANUS_VERSION}/janusgraph-${JANUS_VERSION}-hadoop2.zip -o janusgraph.zip && \
+    # curl -fSL http://li3huo.com/janusgraph-0.3.1-hadoop2.zip -o janusgraph.zip && \
     curl -fSL https://github.com/JanusGraph/janusgraph/releases/download/v${JANUS_VERSION}/janusgraph-${JANUS_VERSION}-hadoop2.zip.asc -o janusgraph.zip.asc && \
     export GNUPGHOME="$(mktemp -d)" && \
     for gpgkey in \
@@ -46,7 +46,7 @@ RUN groupadd -r janusgraph --gid=999 && \
     rm -rf ${JANUS_HOME}/examples
 
 COPY docker-entrypoint.sh /usr/local/bin/
-COPY conf/janusgraph-berkeleyje-lucene-server.properties conf/log4j-server.properties ${JANUS_HOME}/conf/gremlin-server/
+COPY conf/janusgraph-berkeleyje-lucene-server.properties conf/gremlin-server.yaml conf/log4j-server.properties ${JANUS_HOME}/conf/gremlin-server/
 COPY scripts/remote-connect.groovy ${JANUS_HOME}/scripts/
 
 RUN chmod 755 /usr/local/bin/docker-entrypoint.sh && \

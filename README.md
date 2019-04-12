@@ -15,6 +15,8 @@ docker-compose up -d && sleep 15 && mvn spring-boot:run
 curl -i localhost:8080/health
 # get data from janusgraph
 curl http://localhost:8080/persons/8408
+# janus http endpoint
+curl -XPOST -Hcontent-type:application/json -d '{"gremlin":"g.V().count()"}' http://localhost:8182
 ```
 
 [java]: https://www.java.com/en/
